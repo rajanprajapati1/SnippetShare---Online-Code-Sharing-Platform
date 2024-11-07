@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import CodeEditor from './components/CodeEditor';
 import ChatOptions from './components/ChatOptions';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://snippet-share-backend.vercel.app');
 const generateSessionId = (length = 6) => {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
@@ -32,7 +32,7 @@ export default function App() {
     const fetchSessionData = async () => {
       try {
         console.log('Fetching session data...');
-        const res = await fetch(`http://localhost:5000/api/v1/session/${sessionId}`);
+        const res = await fetch(`https://snippet-share-backend.vercel.app/api/v1/session/${sessionId}`);
         if (!res.ok) throw new Error('Session not found');
         const data = await res.json();
         console.log('Session data:', data);
@@ -65,7 +65,7 @@ export default function App() {
     
     try {
       const sessionId = new URLSearchParams(location.search).get('sessionId');
-      const response = await fetch(`http://localhost:5000/api/v1/session`, {
+      const response = await fetch(`https://snippet-share-backend.vercel.app/api/v1/session`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
