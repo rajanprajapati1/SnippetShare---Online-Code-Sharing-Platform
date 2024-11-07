@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
+const socket = io('wss://snippet-share-backend.vercel.app'); // Using wss:// for secure WebSocket connection
 
-const socket = io('https://snippet-share-backend.vercel.app'); // Adjust the server URL if needed
 
 export default function ChatOptions() {
   const [message, setMessage] = useState('');
