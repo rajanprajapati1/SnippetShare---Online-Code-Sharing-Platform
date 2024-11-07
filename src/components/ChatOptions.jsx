@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:5000'); // Adjust the server URL if needed
+const socket = io('https://snippet-share-backend.vercel.app'); // Adjust the server URL if needed
 
 export default function ChatOptions() {
   const [message, setMessage] = useState('');
