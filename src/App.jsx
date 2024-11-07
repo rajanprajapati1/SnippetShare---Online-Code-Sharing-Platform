@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import CodeEditor from './components/CodeEditor';
 import ChatOptions from './components/ChatOptions';
 
-const socket = io('https://snippet-share-backend.vercel.app');
+const socket = io('wss://snippet-share-backend.vercel.app'); // Using wss:// for secure WebSocket connection
 const generateSessionId = (length = 6) => {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
